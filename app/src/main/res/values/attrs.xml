@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="XRecyclerView">
+        <attr name="xRefreshEnabled" format="boolean" />
+        <attr name="xLoadMoreEnabled" format="boolean" />
+        <attr name="xHeadFootWithEmptyEnabled" format="boolean" />
+        <attr name="xLayoutManager" format="enum">
+            <enum name="linear" value="0" />
+            <enum name="grid" value="1" />
+            <enum name="staggeredGrid" value="2" />
+        </attr>
+        <attr name="xLayoutManagerOrientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="xSpanCount" format="integer" />
+        <attr name="xIsReverseLayout" format="boolean" />
+    </declare-styleable>
+
+</resources>
