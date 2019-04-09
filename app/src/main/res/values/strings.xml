@@ -1,4 +1,3 @@
 <resources>
-    <string name="loading_text">正在加载...</string>
-    <string name="no_more_text">已加载全部数据</string>
+    <string name="app_name">XRecyclerView</string>
 </resources>

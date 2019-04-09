@@ -222,6 +222,24 @@ public class XRecyclerView extends RecyclerView {
     }
 
     @Override
+    public void setLayoutManager(LayoutManager layout) {
+        super.setLayoutManager(layout);
+
+        if (null == layout) return;
+
+        if (layout instanceof GridLayoutManager) {
+            final GridLayoutManager gridManager = ((GridLayoutManager) layout);
+            gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    return mWrapAdapter.isSpecialItem(position) ? gridManager.getSpanCount() : 1;
+                }
+            });
+        }
+    }
+
+
+    @Override
     public boolean onTouchEvent(MotionEvent ev) {
         if (isLoadingData) return super.onTouchEvent(ev);
 
@@ -337,16 +355,18 @@ public class XRecyclerView extends RecyclerView {
         }
 
         private boolean isHeader(int position) {
+            if (!mHeadFootWithEmptyEnabled && adapter.getItemCount() == 0) return false;
             return getHeaderCount() == 1 && position < getRefreshHeaderCount() + getHeaderCount();
         }
 
         private boolean isEmpty(int position) {
             return adapter.getItemCount() == 0
                     && getEmptyCount() == 1
-                    && position == getRefreshHeaderCount() + getHeaderCount();
+                    && position == getRefreshHeaderCount() + (mHeadFootWithEmptyEnabled ? getHeaderCount() : 0);
         }
 
         private boolean isFooter(int position) {
+            if (!mHeadFootWithEmptyEnabled && adapter.getItemCount() == 0) return false;
             return getFooterCount() == 1
                     && position == (adapter.getItemCount() == 0 ? getEmptyCount() : adapter.getItemCount())
                     + getRefreshHeaderCount()
@@ -472,17 +492,6 @@ public class XRecyclerView extends RecyclerView {
         @Override
         public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
             super.onAttachedToRecyclerView(recyclerView);
-            LayoutManager manager = recyclerView.getLayoutManager();
-            if (manager instanceof GridLayoutManager) {
-                final GridLayoutManager gridManager = ((GridLayoutManager) manager);
-                gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                    @Override
-                    public int getSpanSize(int position) {
-                        return isRefreshHeader(position) || isSpecialItem(position)
-                                ? gridManager.getSpanCount() : 1;
-                    }
-                });
-            }
 
             if (null == adapter) return;
 

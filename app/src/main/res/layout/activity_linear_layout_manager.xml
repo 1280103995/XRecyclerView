@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_purple"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_inserted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="插入第三个位置"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更改第五个位置"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_move"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="移动第七个位置到第九个"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <com.ganba.xrecyclerview.XRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:xLayoutManager="linear"
+        app:xLayoutManagerOrientation="vertical"
+        app:xLoadMoreEnabled="true"
+        app:xRefreshEnabled="true"
+        app:xSpanCount="3" />
+</LinearLayout>
