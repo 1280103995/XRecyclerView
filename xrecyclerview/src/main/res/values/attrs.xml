@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <attr name="xRefreshEnabled" format="boolean" />
+
     <declare-styleable name="XRecyclerView">
-        <attr name="xRefreshEnabled" format="boolean" />
+        <attr name="xRefreshEnabled"/>
         <attr name="xLoadMoreEnabled" format="boolean" />
         <attr name="xHeadFootWithEmptyEnabled" format="boolean" />
         <attr name="xLayoutManager" format="enum">
@@ -16,6 +18,10 @@
         </attr>
         <attr name="xSpanCount" format="integer" />
         <attr name="xIsReverseLayout" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="XScrollView">
+        <attr name="xRefreshEnabled"/>
     </declare-styleable>
 
 </resources>

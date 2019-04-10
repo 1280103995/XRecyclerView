@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.LayoutManagerActivity" />
-        <activity android:name=".ui.MultiTypeActivity"></activity>
+        <activity android:name=".ui.MultiTypeActivity"/>
+        <activity android:name=".ui.XScrollViewActivity"/>
     </application>
 
 </manifest>

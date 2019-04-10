@@ -238,7 +238,6 @@ public class XRecyclerView extends RecyclerView {
         }
     }
 
-
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         if (isLoadingData) return super.onTouchEvent(ev);
