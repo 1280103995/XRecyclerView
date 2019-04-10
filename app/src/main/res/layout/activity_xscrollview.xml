@@ -18,11 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
             app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="16dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -57,10 +57,10 @@
     </android.support.design.widget.AppBarLayout>
 
     <com.ganba.xrecyclerview.XScrollView
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:xRefreshEnabled="true">
 
         <LinearLayout
@@ -69,51 +69,70 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/text1"
                 android:layout_toRightOf="@+id/text1"
-                android:text="111111111111111111111111" />
+                android:text="明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间。
+
+转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。" />
 
             <TextView
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
-            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="驿外断桥边，寂寞开无主。已是黄昏独自愁，更著风和雨。
+无意苦争春，一任群芳妒。零落成泥碾作尘，只有香如故。" />
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="寻寻觅觅，冷冷清清，凄凄惨惨戚戚。乍暖还寒时候，最难将息。三杯两盏淡酒，怎敌他、晚来风急？雁过也，正伤心，却是旧时相识。
+满地黄花堆积。憔悴损，如今有谁堪摘？守着窗儿，独自怎生得黑？梧桐更兼细雨，到黄昏、点点滴滴。这次第，怎一个愁字了得！" />
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="寒蝉凄切，对长亭晚，骤雨初歇。都门帐饮无绪，留恋处，兰舟催发。执手相看泪眼，竟无语凝噎。念去去，千里烟波，暮霭沉沉楚天阔。
+多情自古伤离别，更那堪，冷落清秋节！今宵酒醒何处？杨柳岸，晓风残月。此去经年，应是良辰好景虚设。便纵有千种风情，更与何人说？" />
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="红藕香残玉簟秋。轻解罗裳，独上兰舟。云中谁寄锦书来，雁字回时，月满西楼。
+花自飘零水自流。一种相思，两处闲愁。此情无计可消除，才下眉头，却上心头。" />
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="红酥手，黄縢酒，满城春色宫墙柳。东风恶，欢情薄。一怀愁绪，几年离索。错、错、错。
+春如旧，人空瘦，泪痕红浥鲛绡透。桃花落，闲池阁。山盟虽在，锦书难托。莫、莫、莫！" />
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="纤云弄巧，飞星传恨，银汉迢迢暗度。金风玉露一相逢，便胜却人间无数。(度 通：渡)
+柔情似水，佳期如梦，忍顾鹊桥归路。两情若是久长时，又岂在朝朝暮暮。" />
 
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="测试测试测试测试测试测试" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="当年万里觅封侯，匹马戍梁州。关河梦断何处？尘暗旧貂裘。
+胡未灭，鬓先秋，泪空流。此生谁料，心在天山，身老沧洲。" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="少年听雨歌楼上。红烛昏罗帐。壮年听雨客舟中。江阔云低、断雁叫西风。
+而今听雨僧庐下。鬓已星星也。悲欢离合总无情。一任阶前、点滴到天明。" />
 
         </LinearLayout>
     </com.ganba.xrecyclerview.XScrollView>

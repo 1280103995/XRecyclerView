@@ -36,7 +36,7 @@ public class XScrollView extends NestedScrollView {
 
     private void init(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.XScrollView);
-        mRefreshEnabled = ta.getBoolean(R.styleable.XScrollView_xRefreshEnabled, true);
+        mRefreshEnabled = ta.getBoolean(R.styleable.XScrollView_xRefreshEnabled, false);
         if (mRefreshEnabled){
             mRefreshView = initRefreshView();
         }
