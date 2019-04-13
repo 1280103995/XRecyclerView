@@ -22,13 +22,13 @@
 
   * setRefreshView(IRefreshView view)&#160; &#160; &#160; &#160;自定义一个下拉刷新view，需要实现IRefreshView接口
   * addHeaderView(View view)&#160; &#160; &#160; &#160; 添加一个头部视图
-  * setEmptyView(View view)             设置一个空视图，在没有数据的时候显示
-  * addFooterView(View view)添加一个尾部视图
-  * setLoadMoreView(ILoadMoreView view)自定义一个上拉加载view，需要实现ILoadMoreView接口
-  * setLimitNumberToCallLoadMore(int count) 设置显示倒数第几个item时调用加载更多方法，默认为1
-  * setHeadFootWithEmptyEnabled(boolean enable) 设置显示空视图时是否显示头部尾部视图，默认不显示
-  * refreshComplete() 刷新完成后调用，结束刷新
-  * loadMoreComplete() 加载完成后调用，结束加载更多
-  * setNoMore(boolean noMore) 设置没有更多数据时调用，调用之后不能再加载更多数据，下拉刷新后被重置
-  * autoRefresh() 进入页面时自动刷新数据，需要在设置setLoadingListener后才会触发<br><br>
+  * setEmptyView(View view)&#160; &#160; &#160; &#160;设置一个空视图，在没有数据的时候显示
+  * addFooterView(View view)&#160; &#160; &#160; &#160;添加一个尾部视图
+  * setLoadMoreView(ILoadMoreView view)&#160; &#160; &#160; &#160;自定义一个上拉加载view，需要实现ILoadMoreView接口
+  * setLimitNumberToCallLoadMore(int count)&#160; &#160; &#160; &#160;设置显示倒数第几个item时调用加载更多方法，默认为1
+  * setHeadFootWithEmptyEnabled(boolean enable)&#160; &#160; &#160; &#160;设置显示空视图时是否显示头部尾部视图，默认不显示
+  * refreshComplete()&#160; &#160; &#160; &#160;刷新完成后调用，结束刷新
+  * loadMoreComplete()&#160; &#160; &#160; &#160;加载完成后调用，结束加载更多
+  * setNoMore(boolean noMore)&#160; &#160; &#160; &#160;设置没有更多数据时调用，调用之后不能再加载更多数据，下拉刷新后被重置
+  * autoRefresh()&#160; &#160; &#160; &#160;进入页面时自动刷新数据，需要在设置setLoadingListener后才会触发<br><br>
   更多方式参考源码
