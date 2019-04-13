@@ -1,6 +1,6 @@
 # XRecyclerView
 <br>
-在项目中经常用到RecyclerView，有时候业务需求，需要下拉刷新，上拉加载；有时候需要支持头部尾部视图、支持section等，为了完成业务需求，
+&#160; &#160; &#160; &#160;在项目中经常用到RecyclerView，有时候业务需求，需要下拉刷新，上拉加载；有时候需要支持头部尾部视图、支持section等，为了完成业务需求，
 引入了太多第三方库，而且大部分还不能满足需求，且这些库重复功能太多。在写这个库之前，也参考了一些第三方库，如：[XRecyclerView](https://github.com/XRecyclerView/XRecyclerView)、[FamiliarRecyclerView](https://github.com/iwgang/FamiliarRecyclerView)，
 还有网络上的一些开源库。为了代码高度复用，减少布局层次，一两个通用适配器完成大部分功能，于是就有了这个库。<br>   
 
