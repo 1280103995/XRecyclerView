@@ -30,5 +30,5 @@
   * refreshComplete() 刷新完成后调用，结束刷新
   * loadMoreComplete() 加载完成后调用，结束加载更多
   * setNoMore(boolean noMore) 设置没有更多数据时调用，调用之后不能再加载更多数据，下拉刷新后被重置
-  * autoRefresh() 进入页面时自动刷新数据，需要在设置setLoadingListener后才会触发<br>
+  * autoRefresh() 进入页面时自动刷新数据，需要在设置setLoadingListener后才会触发<br><br>
   更多方式参考源码
