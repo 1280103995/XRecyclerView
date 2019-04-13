@@ -20,8 +20,8 @@
 
 ## **提供的方法**
 
-  * setRefreshView(IRefreshView view)   自定义一个下拉刷新view，需要实现IRefreshView接口
-  * addHeaderView(View view)            添加一个头部视图
+  * setRefreshView(IRefreshView view)&#160; &#160; &#160; &#160;自定义一个下拉刷新view，需要实现IRefreshView接口
+  * addHeaderView(View view)&#160; &#160; &#160; &#160; 添加一个头部视图
   * setEmptyView(View view)             设置一个空视图，在没有数据的时候显示
   * addFooterView(View view)添加一个尾部视图
   * setLoadMoreView(ILoadMoreView view)自定义一个上拉加载view，需要实现ILoadMoreView接口
