@@ -15,7 +15,7 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'a RecyclerView that implements pullrefresh and loadingmore featrues.you can use it like a standard RecyclerView'     //项目的描述 你可以多写一点
+                name 'A ReclerView that supports pull-down refresh and pull-up loading can be used normally with RecyclerView. Support for adding a head view, an empty view, and a tail view.'     //项目的描述 你可以多写一点
                 url siteUrl
                 // Set your license
                 licenses {
