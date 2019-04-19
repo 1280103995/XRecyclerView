@@ -1,6 +1,5 @@
 package com.ganba.xrecyclerview.adapter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -26,8 +25,8 @@ public abstract class MultiTypeRVAdapter<T> extends RVAdapter<T>{
         mOnMultiItemLongClickListener = l;
     }
 
-    public MultiTypeRVAdapter(Context context) {
-        super(context, -1);
+    public MultiTypeRVAdapter() {
+        super(-1);
     }
 
     protected abstract int getItemLayoutId(int viewType);

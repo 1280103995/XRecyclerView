@@ -1,6 +1,5 @@
 package com.ganba.xrecyclerview.adapter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
@@ -16,7 +15,6 @@ import java.util.List;
 public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
     private List<T> mData = new ArrayList<>();
-    private Context mContext;
     private int mItemLayoutId;
     private OnItemClickListener<T> mOnItemClickListener;
     private OnItemLongClickListener<T> mOnItemLongClickListener;
@@ -39,13 +37,8 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
 
     protected abstract void convert(ViewHolder vH, T item, int position);
 
-    protected RVAdapter(Context context, int itemLayoutId) {
-        mContext = context;
+    protected RVAdapter(int itemLayoutId) {
         mItemLayoutId = itemLayoutId;
-    }
-
-    public Context getContext(){
-        return mContext;
     }
 
     @Override
@@ -53,14 +46,14 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
         return mData != null ? mData.size() : 0;
     }
 
+    @NonNull
     @Override
-    public @NonNull
-    ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return getViewHolder(parent, mItemLayoutId);
     }
 
     protected ViewHolder getViewHolder(@NonNull ViewGroup parent, int layoutId) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(layoutId, parent, false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false));
     }
 
     @Override
@@ -93,7 +86,7 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
         /**
          * 用来保存条目视图里面所有的控件
          */
-        private SparseArray<View> mViews = null;
+        private SparseArray<View> mViews;
 
         /**
          * 构造函数
@@ -102,7 +95,7 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
          */
         public ViewHolder(View itemView) {
             super(itemView);
-            mViews = new SparseArray<View>();
+            mViews = new SparseArray<>();
         }
 
         /**

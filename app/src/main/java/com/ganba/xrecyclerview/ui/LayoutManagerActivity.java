@@ -72,7 +72,7 @@ public class LayoutManagerActivity extends AppCompatActivity {
 //        mRecyclerView.setLoadMoreEnabled(false);
 //        mRecyclerView.setLimitNumberToCallLoadMore(3);
 //        mRecyclerView.setHeadFootWithEmptyEnabled(true);
-        mAdapter = new RVAdapter<String>(this, android.R.layout.test_list_item) {
+        mAdapter = new RVAdapter<String>(android.R.layout.test_list_item) {
             @Override
             protected void convert(ViewHolder vH, String item, int position) {
                 vH.setText(android.R.id.text1, item);
