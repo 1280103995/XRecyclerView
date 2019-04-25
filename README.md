@@ -35,6 +35,6 @@
   
   -----------------
   
-  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/1.mov)
-  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/2.mov)
-  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/3.mov)
+  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/1.gif)
+  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/2.gif)
+  
