@@ -46,7 +46,7 @@ public class MultiTypeActivity extends AppCompatActivity {
         mRecyclerView.setRefreshEnabled(false);
         mRecyclerView.setLoadMoreEnabled(false);
 
-        mAdapter = new MultiTypeRVAdapter<Object>(this) {
+        mAdapter = new MultiTypeRVAdapter<Object>() {
             private int SUB_TYPE = 0;
             private int TYPE = 1;
 

@@ -32,3 +32,9 @@
   * setNoMore(boolean noMore)&#160; &#160; &#160; &#160;设置没有更多数据时调用，调用之后不能再加载更多数据，下拉刷新后被重置
   * autoRefresh()&#160; &#160; &#160; &#160;进入页面时自动刷新数据，需要在设置setLoadingListener后才会触发<br><br>
   更多方式参考源码
+  
+  -----------------
+  
+  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/1.mov)
+  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/2.mov)
+  ![image](https://github.com/1280103995/XRecyclerView/blob/master/screenshots/3.mov)
