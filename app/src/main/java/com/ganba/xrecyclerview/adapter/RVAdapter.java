@@ -1,5 +1,6 @@
 package com.ganba.xrecyclerview.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
@@ -18,6 +19,7 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
     private int mItemLayoutId;
     private OnItemClickListener<T> mOnItemClickListener;
     private OnItemLongClickListener<T> mOnItemLongClickListener;
+    private Context mContext;
 
     public void setOnItemClickListener(OnItemClickListener<T> mOnItemClickListener) {
         this.mOnItemClickListener = mOnItemClickListener;
@@ -37,6 +39,21 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
 
     protected abstract void convert(ViewHolder vH, T item, int position);
 
+    /**
+     * 可以在这里自定哪些UI需要刷新
+     * @param vH
+     * @param item
+     * @param position
+     * @param payloads
+     */
+    protected void convert(ViewHolder vH, T item, int position, List<Object> payloads){
+
+    }
+
+    public Context getContext(){
+        return mContext;
+    }
+
     protected RVAdapter(int itemLayoutId) {
         mItemLayoutId = itemLayoutId;
     }
@@ -49,11 +66,21 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        mContext = parent.getContext();
         return getViewHolder(parent, mItemLayoutId);
     }
 
     protected ViewHolder getViewHolder(@NonNull ViewGroup parent, int layoutId) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull List<Object> payloads) {
+        if(payloads.isEmpty()){
+            onBindViewHolder(holder, position);
+        }else{//自定义需要刷新的内容
+            convert(holder, getData(position), position, payloads);
+        }
     }
 
     @Override
@@ -222,3 +249,4 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RVAdapter.ViewHo
         notifyDataSetChanged();
     }
 }
+
