@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import java.util.List;
+
 public class XRecyclerView extends RecyclerView {
 
     private boolean isLoadingData = false;
@@ -29,6 +31,7 @@ public class XRecyclerView extends RecyclerView {
     private boolean mLoadMoreEnabled = true;
     private boolean isFirstLoad;
     private boolean mHeadFootWithEmptyEnabled = false;
+    private boolean mHeadDefaultVisible = false;
 
     private IRefreshView mRefreshView;
     private View mHeaderView;
@@ -395,7 +398,7 @@ public class XRecyclerView extends RecyclerView {
 
                 return count;
             } else {
-                return getRefreshHeaderCount();
+                return mHeadDefaultVisible ? getRefreshHeaderCount() + getHeaderCount() : getRefreshHeaderCount();
             }
         }
 
@@ -440,6 +443,32 @@ public class XRecyclerView extends RecyclerView {
                     return new SimpleViewHolder(mLoadMoreView.getView());
                 default:
                     return adapter.onCreateViewHolder(parent, viewType);
+            }
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull List<Object> payloads) {
+            switch (holder.getItemViewType()) {
+                case TYPE_REFRESH:
+                    break;
+                case TYPE_HEADER:
+                    break;
+                case TYPE_EMPTY:
+                    break;
+                case TYPE_FOOTER:
+                    break;
+                case TYPE_LOAD_MORE:
+                    break;
+                default:
+                    int adjPosition = position - getRefreshHeaderCount() - getHeaderCount();
+                    int adapterCount;
+                    if (adapter != null) {
+                        adapterCount = adapter.getItemCount();
+                        if (adjPosition < adapterCount) {
+                            adapter.onBindViewHolder(holder, adjPosition, payloads);
+                        }
+                    }
+                    break;
             }
         }
 
@@ -684,6 +713,16 @@ public class XRecyclerView extends RecyclerView {
 
     public boolean isHeadAndEmptyEnabled() {
         return mHeadFootWithEmptyEnabled;
+    }
+
+    /**
+     * 设置 HeadView 一开始就显示，不等待数据回来一起显示
+     * @param visible
+     */
+    public void setHeadDefaultVisible(boolean visible){
+        mHeadDefaultVisible = visible;
+        /**mHeadFootWithEmptyEnabled 不应该直接设置为true，而是计算 {@link WrapAdapter#isHeader(int)} 返回值*/
+        mHeadFootWithEmptyEnabled = true;
     }
 
     // set the number to control call load more
