@@ -2,7 +2,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 // gradle bintrayUpload
-version = "1.0.0"
+version = "1.0.1"
 group = "com.ganba"
 
 def siteUrl = 'https://github.com/1280103995/XRecyclerView'
